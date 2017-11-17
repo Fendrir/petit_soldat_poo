@@ -3,27 +3,43 @@
 class Armee_Humaine {
 
 
-    private $_armure = "côte de maille";            // toutes les côtes sont en maille par défault
-    private $_updateArmure = 0;                     // l'amure peut être update jusqu'a 3 max et est à 0 par défault
-    private $_fantassins = [];
-    private $_fusiliers= [];
-    private $_griffons = [];
-    private $_chavaliers = [];
+    private $_armure;                                  // toutes les côtes sont en maille par défault
+    // private $_updateArmure = 0;                     // l'amure peut être update jusqu'a 3 max et est à 0 par défault
+    // private $_fantassins = [];
+    // private $_fusiliers= [];
+    // private $_griffons = [];
+    // private $_chavaliers = [];
 
-    protected $_armePrincipale;
-    protected $_race ="humain";                            // l'armée humaine peut avoir des humains et des nains pour les griffons  
+    protected $_armePrincipale;                         // l'arme sera définie dans chacune des class différentes
+    protected $_race="humain";                         // l'armée humaine peut avoir des humains et des nains pour les griffons  les humains sont par defaut
 
-    public function __construct($_armePrincipale,$_armure)
+    public function __construct()
     {
 
-        $this->setEquipement($_armePrincipale,$_armure);
+        $this->setEquipement($_armePrincipale);
+        $this->setRace($_race);
 
     }
 
-    public function setEquipement($_armePrincipale,$_armure){
+    public function setRace($_race)
+    {
+
+        $this->_race=$_race;
+
+    }
+
+    public function getRace()
+    {
+
+        return "Race : ".$this->_race."</br>";
+
+    }
+
+    public function setEquipement($_armePrincipale)
+    {
 
         $this->_armePrincipale=$_armePrincipale;
-        $this->_armure=$_armure;
+        $this->_armure="côte de maille";
 
     }
 
