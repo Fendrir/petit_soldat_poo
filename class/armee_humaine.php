@@ -3,8 +3,8 @@
 class Armee_Humaine {
 
 
-    private $_armure;                                  // toutes les côtes sont en maille par défault
-    // private $_updateArmure = 0;                     // l'amure peut être update jusqu'a 3 max et est à 0 par défault
+    private $_armure="";                                  // toutes les côtes sont en maille par défault
+    private $_updateArmure=0;                    // l'amure peut être update jusqu'a 3 max et est à 0 par défault
     // private $_fantassins = [];
     // private $_fusiliers= [];
     // private $_griffons = [];
@@ -13,11 +13,26 @@ class Armee_Humaine {
     protected $_armePrincipale;                         // l'arme sera définie dans chacune des class différentes
     protected $_race="humain";                         // l'armée humaine peut avoir des humains et des nains pour les griffons  les humains sont par defaut
 
-    public function __construct()
+    public function __construct($_updateArmure)
     {
 
         $this->setEquipement($_armePrincipale);
         $this->setRace($_race);
+        $this->setUpdateArmure($_updateArmure);
+
+    }
+
+
+    public function setUpdateArmure($_updateArmure)
+    {
+
+        $this->_updateArmure=$_updateArmure;
+
+    }
+
+    public function getUpdateArmure(){
+
+        return "Niveau d'armure : ".$this->_updateArmure."</br>";
 
     }
 
