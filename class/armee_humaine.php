@@ -16,8 +16,6 @@ class Armee_Humaine {
     public function __construct($_updateArmure)
     {
 
-        $this->setEquipement($_armePrincipale);
-        $this->setRace($_race);
         $this->setUpdateArmure($_updateArmure);
 
     }
